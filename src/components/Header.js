@@ -10,7 +10,8 @@ const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((store) => store?.user);
-  console.log(user);
+
+  console.log(user, "user");
 
   const handleSignOut = () => {
     signOut(auth)
@@ -52,7 +53,7 @@ const Header = () => {
       </div>
       {user && (
         <div className="flex p-2 justify-end">
-          <img className="w-12 h-12 " alt="userIcon" src={user?.photoUrl}></img>
+          <img className="w-12 h-12 " alt="userIcon" src={user?.photoURL}></img>
           <button onClick={handleSignOut}>Sign Out</button>
         </div>
       )}
